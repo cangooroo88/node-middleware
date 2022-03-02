@@ -1,0 +1,51 @@
+{
+  "name": "hyperian-middleware",
+  "version": "0.0.1",
+  "engines": {
+    "node": "8.12.0"
+  },
+  "description": "Hyperian Middleware Server",
+  "main": "./build/index.js",
+  "scripts": {
+    "build": "rimraf ./build && tsc",
+    "start": "npm run deploy && node ./build/index.js",
+    "start:dev": "npm run build && node ./build/index.js -e dev",
+    "deploy": "npm install && npm run build",
+    "heroku-postbuild": "echo Skip builds on Heroku"
+  },
+  "heroku-run-build-script": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyperianhq/hyperian-middleware.git"
+  },
+  "author": "david.uhlir@gallico.cz & dhradek@gallico.cz",
+  "private": true,
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/hyperianhq/hyperian-middleware/issues"
+  },
+  "homepage": "https://github.com/hyperianhq/hyperian-middleware#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "@google-cloud/vision": "^0.17.0",
+    "@types/moment": "^2.13.0",
+    "@types/request": "^2.47.0",
+    "@types/restify": "^5.0.7",
+    "@types/restify-errors": "^4.3.2",
+    "aws-sdk": "^2.209.0",
+    "commander": "^2.15.0",
+    "html-pdf": "^2.2.0",
+    "js-sha1": "^0.6.0",
+    "moment": "^2.21.0",
+    "mrz": "^3.1.0",
+    "newrelic": "^4.1.1",
+    "raven": "^2.6.0",
+    "request": "^2.87.0",
+    "restify": "^6.3.4",
+    "restify-cors-middleware": "^1.1.0",
+    "rollbar": "^2.5.0",
+    "soap": "^0.24.0",
+    "typescript": "^2.7.2",
+    "rimraf": "^2.6.2"
+  }
+}
